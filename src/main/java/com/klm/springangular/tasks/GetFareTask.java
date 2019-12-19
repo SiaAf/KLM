@@ -1,8 +1,8 @@
-package nl.klm.demo.tasks;
+package com.klm.springangular.tasks;
 
-import nl.klm.demo.model.Fare;
-import nl.klm.demo.service.FareService;
-import nl.klm.demo.service.HttpService;
+import com.klm.springangular.model.Fare;
+import com.klm.springangular.service.FareService;
+import com.klm.springangular.service.HttpService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;

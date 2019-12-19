@@ -1,6 +1,6 @@
-package nl.klm.demo.helper;
+package com.klm.springangular.helper;
 
-import nl.klm.demo.model.Locations;
+import com.klm.springangular.model.Locations;
 
 import java.util.Comparator;
 

@@ -14,7 +14,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-group = 'com.segfault16'
+group = 'com.klm'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -36,6 +36,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web") {
 		exclude module: "spring-boot-starter-tomcat"
 	}
+	compile(group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.0.8.RELEASE')
 	compile(group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.0.8.RELEASE')
 	implementation("org.springframework.boot:spring-boot-starter-jetty:2.2.2.RELEASE")
 	implementation("org.springframework.boot:spring-boot-starter-actuator:2.2.2.RELEASE")

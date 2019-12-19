@@ -1,4 +1,4 @@
-package nl.klm.demo.model;
+package com.klm.springangular.model;
 
 
 import java.util.List;

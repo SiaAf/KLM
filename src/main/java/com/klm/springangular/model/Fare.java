@@ -1,4 +1,4 @@
-package nl.klm.demo.model;
+package com.klm.springangular.model;
 
 public class Fare {
     private float amount;

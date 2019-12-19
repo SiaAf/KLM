@@ -1,9 +1,9 @@
 package com.klm.springangular.service;
 
 import com.google.gson.Gson;
-import nl.klm.demo.dto.FareDto;
-import nl.klm.demo.model.Fare;
-import nl.klm.demo.model.Locations;
+import com.klm.springangular.dto.FareDto;
+import com.klm.springangular.model.Fare;
+import com.klm.springangular.model.Locations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;

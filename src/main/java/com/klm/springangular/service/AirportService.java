@@ -1,11 +1,10 @@
-package nl.klm.demo.service;
+package com.klm.springangular.service;
 
 import com.google.gson.Gson;
-import nl.klm.demo.dto.AirportDto;
-import nl.klm.demo.helper.AirportCodeComparator;
-import nl.klm.demo.helper.AirportNameComparator;
-import nl.klm.demo.model.AirportsResponse;
-import nl.klm.demo.model.Locations;
+import com.klm.springangular.dto.AirportDto;
+import com.klm.springangular.helper.AirportCodeComparator;
+import com.klm.springangular.model.AirportsResponse;
+import com.klm.springangular.model.Locations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;

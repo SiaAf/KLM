@@ -1,8 +1,8 @@
-package nl.klm.demo.tasks;
+package com.klm.springangular.tasks;
 
-import nl.klm.demo.model.Locations;
-import nl.klm.demo.service.AirportService;
-import nl.klm.demo.service.HttpService;
+import com.klm.springangular.model.Locations;
+import com.klm.springangular.service.AirportService;
+import com.klm.springangular.service.HttpService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;

@@ -1,7 +1,7 @@
-package nl.klm.demo.api;
+package com.klm.springangular.api;
 
-import nl.klm.demo.dto.FareDto;
-import nl.klm.demo.service.TaskService;
+import com.klm.springangular.dto.FareDto;
+import com.klm.springangular.service.TaskService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

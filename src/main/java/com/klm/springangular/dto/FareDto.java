@@ -1,4 +1,4 @@
-package nl.klm.demo.dto;
+package com.klm.springangular.dto;
 
 public class FareDto {
     private String originCode;

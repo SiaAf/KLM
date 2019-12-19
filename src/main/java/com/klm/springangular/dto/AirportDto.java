@@ -1,7 +1,7 @@
-package nl.klm.demo.dto;
+package com.klm.springangular.dto;
 
-import nl.klm.demo.model.Locations;
-import nl.klm.demo.model.Page;
+import com.klm.springangular.model.Locations;
+import com.klm.springangular.model.Page;
 
 import java.util.List;
 

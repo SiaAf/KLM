@@ -1,10 +1,10 @@
-package nl.klm.demo.service;
+package com.klm.springangular.service;
 
-import nl.klm.demo.dto.FareDto;
-import nl.klm.demo.model.Fare;
-import nl.klm.demo.model.Locations;
-import nl.klm.demo.tasks.GetAirportTask;
-import nl.klm.demo.tasks.GetFareTask;
+import com.klm.springangular.dto.FareDto;
+import com.klm.springangular.model.Fare;
+import com.klm.springangular.model.Locations;
+import com.klm.springangular.tasks.GetAirportTask;
+import com.klm.springangular.tasks.GetFareTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

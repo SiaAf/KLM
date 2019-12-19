@@ -1,7 +1,7 @@
-package nl.klm.demo.api;
+package com.klm.springangular.api;
 
-import nl.klm.demo.dto.AirportDto;
-import nl.klm.demo.service.AirportService;
+import com.klm.springangular.dto.AirportDto;
+import com.klm.springangular.service.AirportService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
