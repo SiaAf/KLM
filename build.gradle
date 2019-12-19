@@ -18,7 +18,7 @@ group = 'com.klm'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
-jar {
+bootJar {
 	baseName = 'spring-angular'
 	version = '0.0.1-SNAPSHOT'
 	from('frontend/dist') {
