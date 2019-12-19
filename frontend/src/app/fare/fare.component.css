@@ -1,0 +1,15 @@
+.margin-top {
+    margin-top: 100px;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.result-section {
+    background-color: rgba(65, 69, 75, 0.15);
+}
+
+.form-header {
+    text-align: center;
+}

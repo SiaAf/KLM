@@ -1,0 +1,67 @@
+<app-nav-bar></app-nav-bar>
+<div class="container margin-top">
+    <div class="my-container">
+        <ng-template #customLoadingTemplate>
+        </ng-template>
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-12">
+                <h1> Search For A Flight</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="origin">Origin</label>
+                    <input list="origins" type="text" class="form-control" id="origin"
+                           [(ngModel)]="originCode"
+                           name="origin"
+                           placeholder="Enter origin"
+                           (keyup)="onChange($event.srcElement.id)">
+                    <datalist id="origins">
+                        <option *ngFor="let location of locations" [value]="location.code">{{location.code}} - {{location.name}}</option>
+                    </datalist>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input list="destinations" type="text" class="form-control" id="destination" [(ngModel)]="destinationCode" name="destination"
+                           placeholder="Enter destination" (keyup)="onChange($event.srcElement.id)">
+                    <datalist id="destinations">
+                        <option *ngFor="let location of locations" [value]="location.code">{{location.code}} - {{location.name}}</option>
+                    </datalist>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <div class="margin-top" *ngIf="this.fare">
+        <div class="row">
+            <div class="col-12">
+                <h2> Search result</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="origin header col-6"> Origin information</div>
+            <div class="destination header col-6"> Destination information</div>
+        </div>
+        <div class="row">
+            <div class="origin col-6"><b>Name: {{this.fare.originName}}</b></div>
+            <div class="destination col-6"><b>Name: {{this.fare.destinationName}}</b></div>
+        </div>
+        <div class="row">
+            <div class="origin col-6"><b>Code: {{this.fare.originCode}}</b></div>
+            <div class="destination col-6"><b>Code: {{this.fare.destinationCode}}</b></div>
+        </div>
+        <div class="row">
+            <div class="origin col-6"><b>Description: {{this.fare.originDescription}}</b></div>
+            <div class="destination col-6"><b>Description: {{this.fare.destinationDescription}}</b></div>
+        </div>
+        <div class="row">
+            <div class="col-12"><b>Ticket price: {{this.fare.rate}}{{this.fare.currency}}</b></div>
+        </div>
+    </div>
+</div>
