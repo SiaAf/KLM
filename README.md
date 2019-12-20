@@ -13,7 +13,7 @@ The web application has these functionalities:
 - Developers also could use Prometheus by running the command mentioned below in the metrics section<br>
 
 <h1>Application</h1><br>
-The application consists of two different parts naming frontend and backend. The front has been set up <br>
+The application consists of two different parts naming frontend and backend. The back end has been set up <br>
 with Spring boot version 2.2.2 java 8 and front end is based on angular 4.The backend applications is tied <br>
 with the backend server which should be run on port 8080 (can be modified from application.properties).<br> 
 
