@@ -18,8 +18,8 @@ with Spring boot version 2.2.2 java 8 and front end is based on angular 4.The ba
 with the backend server which should be run on port 8080 (can be modified from application.properties).<br> 
 
 <h1>Running the application</h1>
-The backend can be run on port 8083 by running _./gradlew bootRun_ in the root of the application.<br>
-The front end can be run port 4200 by running _npm install_ and  _ng serve_ on frontend root separately.<br> 
+The backend can be run on port 8083 by running <b>./gradlew bootRun</b> in the root of the application.<br>
+The front end can be run on port 4200 by running <b>npm install<b> and  <b>ng serve</b> on frontend root separately.<br> 
 
 If you want to run the who project all together you can first build the jar file by _./gradlew bootJar_ <br>
 and run the jar file by _java -jar build/libs/spring-angular-0.0.1-SNAPSHOT.jar_ the you should be able to <br>
