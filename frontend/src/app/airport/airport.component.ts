@@ -14,25 +14,28 @@ export class AirportComponent implements OnInit {
     locations: Locations[];
     page: Page;
     search: string;
+    map: Map<string, string> = new Map<string, string>();
 
     constructor(private airportService: AirportService) {
-        this.getAirports(null, null, null, null);
+        this.getAirports();
     }
 
     ngOnInit() {
     }
 
     onPageClick(id: any) {
-
-        this.getAirports(null, id, null, this.search == undefined ? null : this.search);
+        this.map.set('page', id);
+        this.search != undefined ? this.map.set('term', this.search) : null;
+        this.getAirports(this.map);
     }
 
     onChange() {
-        this.getAirports(null, null, null, this.search);
+        this.map.set('term', this.search);
+        this.getAirports(this.map);
     }
 
-    getAirports(size: string, page: string, language: string, searchItem: string) {
-        this.airportService.getAirports(size, page, language, searchItem).subscribe((res) => {
+    getAirports(map ?: Map<string, string>) {
+        this.airportService.getAirports(map).subscribe((res) => {
             this.airports = <Airports>res;
             this.page = this.airports.page;
             this.locations = this.airports.locations;

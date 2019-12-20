@@ -11,18 +11,19 @@ import {FareService} from "../../service/fare.service";
     styleUrls: ['./fare.component.css']
 })
 export class FareComponent implements OnInit {
-    title = 'app';
     originCode: string;
     destinationCode: string;
     airports: Airports;
     fare: Fare;
     locations: Locations[];
     public loading = false;
+    map: Map<string, string> = new Map<string, string>();
 
     ngOnInit() {
     }
 
-    constructor(private airportService: AirportService, private fareService: FareService) {}
+    constructor(private airportService: AirportService, private fareService: FareService) {
+    }
 
     onSubmit() {
         if (this.originCode != undefined && this.destinationCode != undefined) {
@@ -39,7 +40,8 @@ export class FareComponent implements OnInit {
 
     onChange(id: String) {
         let selectedInputValue = (id === 'origin') ? this.originCode : this.destinationCode;
-        this.airportService.getAirports(null, null, null, selectedInputValue).subscribe((res) => {
+        this.map.set('term', selectedInputValue);
+        this.airportService.getAirports(this.map).subscribe((res) => {
             this.airports = <Airports>res;
             this.locations = this.airports.locations;
         }, (err: Response) => {

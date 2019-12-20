@@ -11,14 +11,16 @@ export class AirportService {
     constructor(private httpClient: HttpClient) {
     }
 
-    getAirports(size: string, page: string, language: string, searchItem: string) {
+    getAirports(paramsMap?: Map<string, string>) {
         const url = this.config.baseUrl + 'airports/params';
-        const params = new HttpParams()
-            .set('size', size)
-            .set('page', page)
-            .set('lang', language)
-            .set('term', searchItem);
-
-        return this.httpClient.get(url, {headers: this.config.addHeader(), params: params})
+        let params = new HttpParams();
+        if (paramsMap != undefined) {
+            paramsMap.forEach((value, key) => {
+                params = params.append(key, value);
+            });
+            return this.httpClient.get(url, {headers: this.config.addHeader(), params: params})
+        }
+        return this.httpClient.get(url, {headers: this.config.addHeader()})
     }
+
 }
