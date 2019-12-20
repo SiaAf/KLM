@@ -3,10 +3,9 @@
 The web application developed for end users to be able to search their flights and get the fare.<br>
 The web application has these functionalities:
 </p>
-- Users can search their origin by putting characters in the input field. By putting each character user will see a dropdown list which is sorted by origin code
+- Users can search their origin by putting characters in the input field. By putting each character user will see a dropdown        list which is sorted by origin code
     to choose her/his origin easily (the main page http://localhost:8083) <br> 
-- Users can search their destination by putting characters in the input field. By putting each character user will see a dropdown list which 
-    is sorted by destination code to choose her/his destination easily(the main page) <br>
+- Users can search their destination by putting characters in the input field. By putting each character user will see a            dropdown list which is sorted by destination code to choose her/his destination easily(the main page) <br>
 - By selection origin and destination and clicking on search button they will get the information about the origin, destination and Fare(the main page) <br>
 - Users can go to airports page (http://localhost:8083/airports) to see the list of all airports with several pages (pagination). Each page is sorted based on airport code<br>
 - Users will be able to search their airports in the  airports page <br>
