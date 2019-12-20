@@ -19,7 +19,7 @@ with the backend server which should be run on port 8080 (can be modified from a
 
 <h1>Running the application</h1>
 The backend can be run on port 8083 by running _./gradlew bootRun_ in the root of the application.<br>
-The and front end can be run port 4200 by running _npm install_ and  _ng serve_ on frontend root separately.<br> 
+The front end can be run port 4200 by running _npm install_ and  _ng serve_ on frontend root separately.<br> 
 
 If you want to run the who project all together you can first build the jar file by _./gradlew bootJar_ <br>
 and run the jar file by _java -jar build/libs/spring-angular-0.0.1-SNAPSHOT.jar_ the you should be able to <br>
