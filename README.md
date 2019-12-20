@@ -19,10 +19,10 @@ with the backend server which should be run on port 8080 (can be modified from a
 
 <h1>Running the application</h1>
 The backend can be run on port 8083 by running <b>./gradlew bootRun</b> in the root of the application.<br>
-The front end can be run on port 4200 by running <b>npm install<b> and  <b>ng serve</b> on frontend root separately.<br> 
+The front end can be run on port 4200 by running <b>npm install</b> and <b>ng serve</b> on frontend root separately.<br> 
 
-If you want to run the who project all together you can first build the jar file by _./gradlew bootJar_ <br>
-and run the jar file by _java -jar build/libs/spring-angular-0.0.1-SNAPSHOT.jar_ the you should be able to <br>
+If you want to run the who project all together you can first build the jar file by <b>./gradlew bootJar</b> <br>
+and run the jar file by <b>java -jar build/libs/spring-angular-0.0.1-SNAPSHOT.jar</b> then you should be able to <br>
 see the Angular page on port 8083.<br>
 
 
@@ -34,12 +34,12 @@ The application has the 3 main section:<br>
 <br>
 
 <h3>Api controllers</h3>
-The application has 2 controllers for getting airports and fares. and the end points are:<br>
+The application has 2 controllers for getting airports and fares.The end points are:<br>
 - /airports/params (GET) with 4 none required parameters naming size,page,lang,term returns AirportDto<br>
 - /fares/{OrigCode}/{desCode} (GET) for getting fares returns FareDto<br>
 
 <h3>Services</h3>
-The application consists of 5 different services to handle what is needed for back front end.
+The application consists of 5 different services to handle what is needed for front end.
 - Airport Service: this service gets the httpResponse from the HttpService and ultimately makes the airportDto for front end.<br>
 - Fare Service: creates fare and fareDto for the front end<br>
 - Http Service: gets data from the server<br>
@@ -54,8 +54,8 @@ As mentioned above developers could see the metrics here http://localhost:8083/a
 To have a visual dashboard I have also added a yml file to the application for Prometheus.<br>
 what should be done is:<br>
 - docker pull prom/prometheus (pull the image)
-- docker image ls if the image got downloaded
-- docker run -d --name=prometheus -p 9090:9090 -v <path_to_yml_file>:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
+- docker image ls (if the image got downloaded)
+- docker run -d --name=prometheus -p 9090:9090 -v <path_to_yml_file>:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml (run the container)
 - prometheus should be visible at port 9090
 
 
