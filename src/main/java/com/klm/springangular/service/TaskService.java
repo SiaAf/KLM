@@ -38,7 +38,7 @@ public class TaskService {
         CompletableFuture<FareDto> combinedDataCompletionStage =
             CompletableFuture
                 .allOf(originData, destinationData, fareData)
-                .thenApply(all -> preprationForFareDto(originData, destinationData, fareData));
+                .thenApply(all -> preparationForFareDto(originData, destinationData, fareData));
         return combinedDataCompletionStage.join();
 
     }
@@ -49,20 +49,20 @@ public class TaskService {
             this.httpService,
             this.airportService,
             code,
-            "null");
+            null);
     }
 
     private GetFareTask createGetFareTask(String origCode, String destCode) {
         return new GetFareTask(fareUrl, httpService, fareService, origCode, destCode);
     }
 
-    private FareDto preprationForFareDto(CompletableFuture<Locations> originData,
+    private FareDto preparationForFareDto(CompletableFuture<Locations> originData,
         CompletableFuture<Locations> destinationData,
         CompletableFuture<Fare> fareData) {
-        LOGGER.info("WE ARE IN ADD METHOD");
+        LOGGER.info("preparationForFareDto");
         Locations locationsOrig = originData.join();
         Locations locationsDes = destinationData.join();
         Fare fare = fareData.join();
-        return fareService.createFareDto(locationsOrig,locationsDes,fare);
+        return fareService.createFareDto(locationsOrig, locationsDes, fare);
     }
 }

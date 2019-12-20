@@ -1,4 +1,5 @@
 package com.klm.springangular;
+
 import com.google.gson.Gson;
 import com.klm.springangular.model.AirportsResponse;
 import com.klm.springangular.service.HttpService;
@@ -22,22 +23,22 @@ public class HttpServiceTest {
     HttpService httpService;
     @Rule
     public ExpectedException exceptionRule = ExpectedException.none();
+
     @Test
-    public void getAirports() {
+    public void Should_Get_Not_Found() {
         Exception exception = assertThrows(HttpClientErrorException.class, () -> {
-            httpService.getWithParameters("http://localhost:8080/airpor",null,null,null,null);
+            httpService.getWithParameters("http://localhost:8080/airpor", null, null, "null", "null");
         });
         String expectedMessage = "404 Not Found";
         String actualMessage = exception.getMessage();
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
-
     @Test
-    public void getAirportsWithParams() {
-        HttpEntity httpEntity = httpService.getWithParameters("http://localhost:8080/airports",1,1,"null","yp");
-        Gson gson=new Gson();
-        AirportsResponse airportsResponse = gson.fromJson((String) httpEntity.getBody(),  AirportsResponse.class);
-       assertTrue(airportsResponse.getPage().getSize() == 1);
+    public void Should_Get_One_Airport() {
+        HttpEntity httpEntity = httpService.getWithParameters("http://localhost:8080/airports", 1, 1, "null", "yp");
+        Gson gson = new Gson();
+        AirportsResponse airportsResponse = gson.fromJson((String) httpEntity.getBody(), AirportsResponse.class);
+        assertTrue(airportsResponse.getPage().getSize() == 1);
     }
 }

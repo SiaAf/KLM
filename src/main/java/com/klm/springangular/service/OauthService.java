@@ -1,4 +1,5 @@
 package com.klm.springangular.service;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,11 @@ public class OauthService {
     private String freshToken;
     private Date tokenExpiryDate;
 
-
     public String getToken() {
         LOGGER.info("getToken");
         OAuth2AccessToken accessToken = restTemplate.getAccessToken();
         freshToken = accessToken.getValue();
-        tokenExpiryDate =accessToken.getExpiration();
+        tokenExpiryDate = accessToken.getExpiration();
         return freshToken;
     }
 

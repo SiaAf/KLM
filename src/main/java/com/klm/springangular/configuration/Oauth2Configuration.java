@@ -24,7 +24,6 @@ public class Oauth2Configuration {
     @Value("${klm.server.oauth2.grant.type}")
     private String grantType;
 
-
     @Bean
     protected OAuth2ProtectedResourceDetails resource() {
         ClientCredentialsResourceDetails resource = new ClientCredentialsResourceDetails();

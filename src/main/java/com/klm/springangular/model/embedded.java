@@ -1,6 +1,5 @@
 package com.klm.springangular.model;
 
-
 import java.util.List;
 
 public class embedded {

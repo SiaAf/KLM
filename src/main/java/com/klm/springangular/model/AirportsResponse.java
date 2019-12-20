@@ -3,6 +3,7 @@ package com.klm.springangular.model;
 public class AirportsResponse {
     private embedded _embedded;
     private Page page;
+
     public embedded get_embedded() {
         return _embedded;
     }

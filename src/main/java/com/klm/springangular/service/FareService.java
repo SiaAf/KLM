@@ -10,24 +10,13 @@ import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class FareService{
-
-    @Value("${klm.server.fares.url}")
-    private String airportsUrl;
-    @Autowired
-    private HttpService httpService;
-    private HttpEntity httpEntityFare;
-    private String originCode;
-    private String destCode;
-
-
+public class FareService {
 
     public Fare createFare(HttpEntity httpEntity) {
-        Gson gson=new Gson();
+        Gson gson = new Gson();
         Fare fare = gson.fromJson((String) httpEntity.getBody(), Fare.class);
         return fare;
     }
-
 
     public FareDto createFareDto(Locations locationsOrig, Locations locationsDes, Fare fare) {
         FareDto fareDto = new FareDto();

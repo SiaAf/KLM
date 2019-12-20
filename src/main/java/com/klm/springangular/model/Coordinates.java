@@ -1,6 +1,5 @@
 package com.klm.springangular.model;
 
-
 public class Coordinates {
     private float latitude;
     private float longitude;

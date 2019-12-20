@@ -1,6 +1,5 @@
 package com.klm.springangular.model;
 
-
 public class Parent {
     private String code;
     private String name;

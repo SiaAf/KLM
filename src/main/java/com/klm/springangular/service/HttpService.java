@@ -17,13 +17,13 @@ public class HttpService {
     private static final Logger LOGGER = LoggerFactory.getLogger(HttpService.class);
 
     @Autowired
-    OauthService oauthService;
-    private RestTemplate restTemplate;
+    private OauthService oauthService;
+
+    private RestTemplate restTemplate = new RestTemplate();
 
     @Async
     public HttpEntity getWithParameters(String url, Integer size, Integer page, String lang, String term) {
-        LOGGER.info("we are sending with url:" + url);
-        restTemplate = new RestTemplate();
+        LOGGER.info("Calling the server with url:" + url);
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(url);
         if (size != null) {
             builder.queryParam("size", size);
@@ -31,12 +31,32 @@ public class HttpService {
         if (page != null) {
             builder.queryParam("page", page);
         }
-        if (!lang.equals("null")) {
+        if (lang != null) {
             builder.queryParam("lang", lang);
         }
-        if (!term.equals("null")){
+        if (term != null) {
             builder.queryParam("term", term);
         }
+       return callTheServer(builder);
+    }
+
+    @Async
+    public HttpEntity getWithLanguageParam(String url, String lang) {
+        LOGGER.info("Calling the server with url and one language param:" + url);
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(url);
+        if (lang != null) {
+            builder.queryParam("lang", lang);
+        }
+        return callTheServer(builder);
+    }
+    @Async
+    public HttpEntity getWithoutParam(String url) {
+        LOGGER.info("Calling the server with url and one language param:" + url);
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(url);
+        return callTheServer(builder);
+    }
+
+    private HttpEntity callTheServer(UriComponentsBuilder builder) {
         HttpEntity<?> entity = new HttpEntity<>(createHeader());
         HttpEntity<String> response = restTemplate.exchange(
             builder.toUriString(),
@@ -47,10 +67,10 @@ public class HttpService {
     }
 
     private HttpHeaders createHeader() {
-        LOGGER.info("creating header");
+        LOGGER.info("Creating header");
         HttpHeaders headers = new HttpHeaders();
         String freshToken = oauthService.getFreshToken();
-        headers.add("Authorization","Bearer " + freshToken);
+        headers.add("Authorization", "Bearer " + freshToken);
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
         return headers;
     }

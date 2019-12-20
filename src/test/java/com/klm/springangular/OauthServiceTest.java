@@ -9,16 +9,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
 
+import static junit.framework.TestCase.assertTrue;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class OauthServiceTest {
 
     @Autowired
     private OauthService oauthService;
-    //TODO check this test
+
     @Test
-    public void IsTokeExpired() {
-        Date yesterday = new Date(System.currentTimeMillis()-24*60*60*1000);
-//        assertTrue(yesterday.before(oauthService.tokenExpiryDate()));
+    public void Get_Fresh_Token() {
+        String freshToken = oauthService.getFreshToken();
+        assertTrue(freshToken.length() == 36);
     }
 }

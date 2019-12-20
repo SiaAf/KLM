@@ -29,7 +29,7 @@ public class GetFareTask implements Supplier<Fare> {
     @Override
     public Fare get() {
         LOGGER.info("WER ARE IN GET FARE THREAD FOR CODE " + originCode + " - " + destinationCode);
-        HttpEntity httpEntity = httpService.getWithParameters(fareUrl +"/" + originCode + "/" + destinationCode ,null,null,"null","null");
+        HttpEntity httpEntity = httpService.getWithoutParam(fareUrl +"/" + originCode + "/" + destinationCode);
         return fareService.createFare(httpEntity);
     }
 }

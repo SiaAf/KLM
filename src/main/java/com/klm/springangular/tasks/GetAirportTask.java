@@ -26,11 +26,10 @@ public class GetAirportTask implements Supplier<Locations> {
         this.language = language;
     }
 
-
     @Override
     public Locations get() {
         LOGGER.info("WER ARE IN GET JOB FOR CODE" + code);
-        HttpEntity httpEntity = httpService.getWithParameters(airportsUrl +"/" + code ,null,null,language,"null");
+        HttpEntity httpEntity = httpService.getWithLanguageParam(airportsUrl + "/" + code, language);
         return airportService.createAirportResponse(httpEntity);
     }
 }
