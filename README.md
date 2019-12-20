@@ -1,6 +1,8 @@
 <h1>Demo For KLM</h1> <br>
+<p>
 The web application developed for end users to be able to search their flights and get the fare.<br>
 The web application has these functionalities:
+</p>
 - Users can search their origin by putting characters in the input field. By putting each character user will see a dropdown list which is sorted by origin code
     to choose her/his origin easily (the main page http://localhost:8083) <br> 
 - Users can search their destination by putting characters in the input field. By putting each character user will see a dropdown list which 
